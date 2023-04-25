@@ -1,0 +1,240 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="obtenerCredenciales" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabf="clr-namespace:UiPath.Mail.Activities.Business.ForEachMail;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="mabodyCorreo" Type="InArgument(x:String)" />
+    <x:Property Name="maResultadoUsuario" Type="InArgument(x:String)" />
+    <x:Property Name="maResultadoSistema" Type="InArgument(x:String)" />
+    <x:Property Name="maResultadoClave" Type="InArgument(x:String)" />
+    <x:Property Name="maRutCliente" Type="InArgument(x:String)" />
+    <x:Property Name="maUsuarioCredencial" Type="InArgument(x:String)" />
+    <x:Property Name="maSistemaCredencial" Type="InArgument(x:String)" />
+    <x:Property Name="maClaveCredencial" Type="InArgument(x:String)" />
+    <x:Property Name="maResultadoRut" Type="InArgument(x:String)" />
+    <x:Property Name="maRutAsunto" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>616,1670</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.IO</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="obtenerCredenciales" sap:VirtualizedContainerService.HintSize="626,1605.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="mabarca@softwarereservo.com" DisplayName="Utilizar Gmail" EmailAddress="mabarca@softwarereservo.com" sap:VirtualizedContainerService.HintSize="564,1494.6666666666667" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+      <umab:GmailApplicationCard.Body>
+        <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
+          </ActivityAction.Argument>
+          <umab:ForEachEmailX DisplayName="Para cada correo electrónico" sap:VirtualizedContainerService.HintSize="530,1306.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" NumberOfEmailsLimit="100" RetrieveAttachments="False" UnreadOnly="True" WithAttachmentsOnly="False">
+            <umab:ForEachEmailX.Body>
+              <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
+                <ActivityAction.Argument1>
+                  <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="CurrentMail" />
+                </ActivityAction.Argument1>
+                <ActivityAction.Argument2>
+                  <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                </ActivityAction.Argument2>
+                <Sequence DisplayName="obtener valores de credenciales del correo." sap:VirtualizedContainerService.HintSize="496,1042.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">mabodyCorreo</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">CurrentMail.Body</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="String cuerpoDelCorreo = mabodyCorreo;&#xD;&#xA;&#xD;&#xA;//Obtener clave credencial&#xD;&#xA;int lengthClave = &quot;Base64:&quot;.Length;&#xD;&#xA;int indexClaveCredencial = cuerpoDelCorreo.IndexOf (&quot;Base64:&quot;);&#xD;&#xA;String primerSubstringClave = mabodyCorreo.Substring( indexClaveCredencial + lengthClave );&#xD;&#xA;int indexTerminoClave = primerSubstringClave.IndexOf(&quot;\r&quot;);&#xD;&#xA;String claveCredencial = primerSubstringClave.Substring( 0,indexTerminoClave ).Trim();&#xD;&#xA;String claveCredencialSinAsterisco;&#xD;&#xA;if( claveCredencial.Contains('*') ){&#xD;&#xA;&#x9;claveCredencialSinAsterisco = claveCredencial.Replace(&quot;*&quot;,&quot;&quot;);&#xD;&#xA;&#x9;resultadoClaveCredencial = claveCredencialSinAsterisco;&#xD;&#xA;&#x9;&#xD;&#xA;}else{&#xD;&#xA;&#x9;resultadoClaveCredencial = claveCredencial;&#xD;&#xA;&#x9;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;//Obtener usuario credencial&#xD;&#xA;int lengthUsuario = &quot;Usuario:&quot;.Length;&#xD;&#xA;int indexUsuarioCredencial = cuerpoDelCorreo.IndexOf (&quot;Usuario:&quot;);&#xD;&#xA;String primerSubstringUsuario = mabodyCorreo.Substring( indexUsuarioCredencial + lengthUsuario );&#xD;&#xA;int indexTerminoUsuario = primerSubstringUsuario.IndexOf(&quot;\r&quot;);&#xD;&#xA;String usuarioCredencial = primerSubstringUsuario.Substring( 0,indexTerminoUsuario ).Trim();&#xD;&#xA;String usuarioCredencialSinAsterisco;&#xD;&#xA;if( usuarioCredencial.Contains('*') ){&#xD;&#xA;&#x9;usuarioCredencialSinAsterisco = usuarioCredencial.Replace(&quot;*&quot;,&quot;&quot;);&#xD;&#xA;&#x9;resultadoUsuarioCredencial = usuarioCredencialSinAsterisco;&#xD;&#xA;&#x9;&#xD;&#xA;}else{&#xD;&#xA;&#x9;resultadoUsuarioCredencial = usuarioCredencial;&#xD;&#xA;&#x9;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;//Obtener sistema credencial&#xD;&#xA;int lengthSistema = &quot;Sistema:&quot;.Length;&#xD;&#xA;int indexSistemaCredencial = cuerpoDelCorreo.IndexOf (&quot;Sistema:&quot;);&#xD;&#xA;String primerSubstringSistema = mabodyCorreo.Substring( indexSistemaCredencial + lengthSistema );&#xD;&#xA;int indexTerminoSistema = primerSubstringSistema.IndexOf(&quot;\r&quot;);&#xD;&#xA;String sistemaCredencial = primerSubstringSistema.Substring( 0,indexTerminoSistema ).Trim();&#xD;&#xA;String sistemaCredencialSinAsterisco;&#xD;&#xA;if( sistemaCredencial.Contains('*') ){&#xD;&#xA;&#x9;sistemaCredencialSinAsterisco = sistemaCredencial.Replace(&quot;*&quot;,&quot;&quot;);&#xD;&#xA;&#x9;resultadoSistemaCredencial = sistemaCredencialSinAsterisco;&#xD;&#xA;&#x9;&#xD;&#xA;}else{&#xD;&#xA;&#x9;resultadoSistemaCredencial = sistemaCredencial;&#xD;&#xA;&#x9;&#xD;&#xA;}&#xD;&#xA;" DisplayName="Extraer datos del body del correo" sap:VirtualizedContainerService.HintSize="434,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+                    <ui:InvokeCode.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="mabodyCorreo">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">mabodyCorreo</CSharpValue>
+                      </InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="resultadoClaveCredencial">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">maResultadoClave</CSharpReference>
+                      </OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="resultadoUsuarioCredencial">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">maResultadoUsuario</CSharpReference>
+                      </OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="resultadoSistemaCredencial">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">maResultadoSistema</CSharpReference>
+                      </OutArgument>
+                    </ui:InvokeCode.Arguments>
+                  </ui:InvokeCode>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">maRutAsunto</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">CurrentMail.Subject</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="int indexSeparacion = valorAsuntoCorreo.IndexOf(&quot;CLIENTE&quot;);&#xA;int lengthCliente = &quot;CLIENTE&quot;.Length;&#xA;String primerSubstring = valorAsuntoCorreo.Substring( indexSeparacion + lengthCliente) ;&#xA;String segundoSubstring;&#xA;&#xA;if( primerSubstring.Contains(':')  ){&#xA;&#x9;segundoSubstring = primerSubstring.Replace(&quot;:&quot;,&quot;&quot;);&#xA;}else {&#xA;&#x9;segundoSubstring = primerSubstring;&#xA;}&#xA;resultadoRut = segundoSubstring.Trim();&#xA;//Console.WriteLine( segundoSubstring );" DisplayName="Extraer rut del cliente en asunto correo" sap:VirtualizedContainerService.HintSize="434,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+                    <ui:InvokeCode.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="valorAsuntoCorreo">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">maRutAsunto</CSharpValue>
+                      </InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="resultadoRut">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">maRutCliente</CSharpReference>
+                      </OutArgument>
+                    </ui:InvokeCode.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeCode>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="loggear.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Flows\\flujoPaginaWeb\\loggear.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Flows\\flujoPaginaWeb\\Buscar cliente y copiar nombre de cliente.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Flows\\flujoPaginaWeb\\Buscar cliente y copiar nombre de cliente.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="maRutCliente">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">maRutCliente</CSharpValue>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="maUsuarioCliente">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">maResultadoUsuario</CSharpValue>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="maSistemaCliente">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">maResultadoSistema</CSharpValue>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="maClaveCliente">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">maResultadoClave</CSharpValue>
+                      </InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ActivityAction>
+            </umab:ForEachEmailX.Body>
+            <umab:ForEachEmailX.MailFilter>
+              <umabf:MailFilterArgument LogicalOperator="And">
+                <umabf:MailFilterArgument.Filters>
+                  <scg:List x:TypeArguments="umabf:SingleMailFilterArgument" Capacity="1">
+                    <umabf:SingleMailFilterArgument DateEqualsFilter="{x:Null}" Criteria="From" DateFilter="SevenDays" Operator="Equals" Value="soporte@dtemite.cl" />
+                  </scg:List>
+                </umabf:MailFilterArgument.Filters>
+              </umabf:MailFilterArgument>
+            </umab:ForEachEmailX.MailFilter>
+            <umab:ForEachEmailX.Mails>
+              <InArgument x:TypeArguments="scg:IEnumerable(snm:MailMessage)">
+                <CSharpValue x:TypeArguments="scg:IEnumerable(snm:MailMessage)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">Gmail.Folder("Inbox")</CSharpValue>
+              </InArgument>
+            </umab:ForEachEmailX.Mails>
+          </umab:ForEachEmailX>
+        </ActivityAction>
+      </umab:GmailApplicationCard.Body>
+      <umab:GmailApplicationCard.ClientId>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </umab:GmailApplicationCard.ClientId>
+      <umab:GmailApplicationCard.ClientSecret>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </umab:GmailApplicationCard.ClientSecret>
+    </umab:GmailApplicationCard>
+  </Sequence>
+</Activity>
