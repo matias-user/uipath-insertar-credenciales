@@ -1,0 +1,301 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="escribirCredenciales" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="sistemaCliente" Type="InArgument(x:String)" />
+    <x:Property Name="claveCliente" Type="InArgument(x:String)" />
+    <x:Property Name="usuarioCliente" Type="InArgument(x:String)" />
+    <x:Property Name="esBoletaHonorario" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>572.6666666666666,3174.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="escribirCredenciales" sap:VirtualizedContainerService.HintSize="568,3110" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="https://reservo.cl/cargadatos/cargadte/" Name="urlCargaDatos" />
+      <Variable x:TypeArguments="x:String" Name="seleccionMessageBox" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Configuración" sap:VirtualizedContainerService.HintSize="506,2999.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="56cab681-4d0d-4d2b-b8f2-2f20cf875bc5" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,2780" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NSelectItem DisplayName="Select Item '-----------'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="Crear Nueva" ScopeIdentifier="56cab681-4d0d-4d2b-b8f2-2f20cf875bc5" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="2">
+                  <x:String>-----------</x:String>
+                  <x:String>Crear Nueva</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" CvType="InputBox" DesignTimeRectangle="899, 442, 330, 45" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'-----------'" FullSelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='sociedad' tableRow='1' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='sociedad' type='' tag='SELECT' class='' aaname='' /&gt;" Guid="94efb60b-b061-4ffc-a8b9-1b059c8cdf41" InformativeScreenshot="278986346dd63556549c5a8bf2a54fc5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='calendar_28831' title='Configuración' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <If sap:VirtualizedContainerService.HintSize="410,1076" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">esBoletaHonorario</CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,446" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BHE-R Boleta'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56cab681-4d0d-4d2b-b8f2-2f20cf875bc5" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" CvTextArgument="BHE-R Boleta de Honorarios El" CvType="Text" DesignTimeRectangle="828, 495, 285, 27" DesignTimeScaleFactor="1.5" FriendlyName="'BHE-R Boleta'" FullSelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='tipo_dte' tableRow='17' tag='SELECT' /&gt;&lt;webctrl aaname=' BHE-R Boleta de Honorarios Electronica (Retencion Receptor)' tableRow='17' tag='OPTION' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='tipo_dte' tag='SELECT' /&gt;&lt;webctrl aaname=' BHE-R Boleta de Honorarios Electronica (Retencion Receptor)' type='' tag='OPTION' class='' check:innerText='BHE-R Boleta de Honorarios Electronica (Retencion Receptor)' /&gt;" Guid="71286acb-01e1-4c05-9ea0-7324917bc4a7" ImageBase64="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" InformativeScreenshot="d6c4f4ce9354117d7708c7a2662f66a2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='calendar_28831' title='Configuración' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BHE-E Boleta'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="Shift" MouseButton="Left" ScopeIdentifier="56cab681-4d0d-4d2b-b8f2-2f20cf875bc5" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" CvTextArgument="BHE-E Boleta de Honorarios E" CvType="Text" DesignTimeRectangle="828, 646, 285, 27" DesignTimeScaleFactor="1.5" FriendlyName="'BHE-E Boleta'" FullSelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='tipo_dte' tableRow='17' tag='SELECT' /&gt;&lt;webctrl aaname=' BHE-E Boleta de Honorarios Electronica (Retencion Emisor)' tableRow='17' tag='OPTION' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='tipo_dte' tag='SELECT' /&gt;&lt;webctrl aaname=' BHE-E Boleta de Honorarios Electronica (Retencion Emisor)' type='' tag='OPTION' class='' check:innerText='BHE-E Boleta de Honorarios Electronica (Retencion Emisor)' /&gt;" Guid="f71a96be-9ef6-4675-acf6-f9247164b4c2" ImageBase64="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" InformativeScreenshot="6b19b23ebbb1b61e275030dad5b5c71f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='calendar_28831' title='Configuración' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,446" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BE Boletas Electronica'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56cab681-4d0d-4d2b-b8f2-2f20cf875bc5" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" CvTextArgument="BE Boletas Electronica" CvType="Text" DesignTimeRectangle="909, 495, 285, 27" DesignTimeScaleFactor="1.5" FriendlyName="'BE Boletas Electronica'" FullSelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='tipo_dte' tableRow='17' tag='SELECT' /&gt;&lt;webctrl aaname=' BE Boletas Electronica' tableRow='17' tag='OPTION' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='tipo_dte' tag='SELECT' /&gt;&lt;webctrl aaname=' BE Boletas Electronica' type='' tag='OPTION' class='' check:innerText='BE Boletas Electronica' /&gt;" Guid="14a91bb1-6813-4328-bc29-979e3d75a473" ImageBase64="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" InformativeScreenshot="0a2b4dd1abd4a5a27607572082427001.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='calendar_28831' title='Configuración' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BEE Boletas'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="Shift" MouseButton="Left" ScopeIdentifier="56cab681-4d0d-4d2b-b8f2-2f20cf875bc5" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" CvType="InputBox" DesignTimeRectangle="909, 646, 285, 27" DesignTimeScaleFactor="1.5" FriendlyName="'BEE Boletas'" FullSelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='tipo_dte' tableRow='17' tag='SELECT' /&gt;&lt;webctrl aaname=' BEE Boletas Exentas Electronica' tableRow='17' tag='OPTION' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='tipo_dte' tag='SELECT' /&gt;&lt;webctrl aaname=' BEE Boletas Exentas Electronica' type='' tag='OPTION' class='' check:innerText='BEE Boletas Exentas Electronica' /&gt;" Guid="8b8958d8-4a95-4444-926a-d39726fc67ff" ImageBase64="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" InformativeScreenshot="58018a1648d6e45e9975b7ce8242ef56.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='calendar_28831' title='Configuración' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NSelectItem DisplayName="Select Item 'DTEmite'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="DTEmite" ScopeIdentifier="56cab681-4d0d-4d2b-b8f2-2f20cf875bc5" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="8">
+                  <x:String>-------</x:String>
+                  <x:String>DTEmite</x:String>
+                  <x:String>BSale</x:String>
+                  <x:String>AppOctava</x:String>
+                  <x:String>OpenFactura</x:String>
+                  <x:String>FACTURA_MX</x:String>
+                  <x:String>Siigo</x:String>
+                  <x:String>Contifico</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" DesignTimeRectangle="818, 581, 330, 45" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'DTEmite'" FullSelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='proveedor' tableRow='18' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='proveedor' type='' tag='SELECT' class='' aaname='' /&gt;" Guid="062df2ad-4bc4-4d8f-bc13-db0ef55607c0" InformativeScreenshot="c8e96fc691f88d9f813ba62c25eca881.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Configuración' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="400" DisplayName="Set Text 'INPUT  DTEmite_password'" sap:VirtualizedContainerService.HintSize="410,157.33333333333334" sap2010:WorkflowViewState.IdRef="SetValue_1">
+              <ui:SetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19e0618d-5184-4701-a83e-1a21c5bb716a" InformativeScreenshot="3efcdf16cf0df8823b69041808accac7" Selector="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='DTEmite_password' tableRow='19' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SetValue.Target>
+              <ui:SetValue.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">claveCliente</CSharpValue>
+                </InArgument>
+              </ui:SetValue.Text>
+            </ui:SetValue>
+            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  DTEmite_sistema'" sap:VirtualizedContainerService.HintSize="410,157.33333333333334" sap2010:WorkflowViewState.IdRef="SetValue_2">
+              <ui:SetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19e0618d-5184-4701-a83e-1a21c5bb716a" InformativeScreenshot="cd80334f7f8f75fdf90829a267e389b7" Selector="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='DTEmite_ambiente' tableRow='19' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SetValue.Target>
+              <ui:SetValue.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">sistemaCliente</CSharpValue>
+                </InArgument>
+              </ui:SetValue.Text>
+            </ui:SetValue>
+            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  DTEmite_usuario'" sap:VirtualizedContainerService.HintSize="410,157.33333333333334" sap2010:WorkflowViewState.IdRef="SetValue_3">
+              <ui:SetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19e0618d-5184-4701-a83e-1a21c5bb716a" InformativeScreenshot="64a492934abdc188f91a3606989659d6" Selector="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='DTEmite_usuario' tableRow='19' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SetValue.Target>
+              <ui:SetValue.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">usuarioCliente</CSharpValue>
+                </InArgument>
+              </ui:SetValue.Text>
+            </ui:SetValue>
+            <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="410,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+              <ui:MessageBox.ChosenButton>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">seleccionMessageBox</CSharpReference>
+                </OutArgument>
+              </ui:MessageBox.ChosenButton>
+              <ui:MessageBox.Text>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"Haz click en aceptar para guardar o cancelar para terminar el proceso."</CSharpValue>
+                </InArgument>
+              </ui:MessageBox.Text>
+            </ui:MessageBox>
+            <If sap:VirtualizedContainerService.HintSize="410,430.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">seleccionMessageBox == "Ok"</CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,246.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Guardar'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56cab681-4d0d-4d2b-b8f2-2f20cf875bc5" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" CvElementArea="304, 913, 70, 29" CvTextArea="311, 920, 54, 13" CvTextArgument="Guardar" CvType="Button" DesignTimeRectangle="305, 914, 67, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Guardar'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='' aaname='Guardar' check:innerText='Guardar' /&gt;" Guid="99462d98-173f-45a3-b789-24ebd5e38a67" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAeCAYAAAB+MQMgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHGSURBVGhD7ZlLjoMwDIa5IFJP00WVa3QFJwH1GF1wgi45gieOY/IgMX1M0WiwpV+ajE2MPzt0kQbUqqZwBFvgPB4PuF6vcD6fDyusHzmwLXDQcbvdYJ7nwwrrRw5sCxwkV3rgaEIObAonk8IRpHAEKRxBCkfQZ3DuHbRNA02sy1CO/ZoGMDavGUu+z/Q2nKlvLYwWunv8/wm6kwV06mCKYr+rvwbHTUwOhoUvG3wOYgIrL8YD5cmzavspijXQuUYE6NQYH38xKzjDJexFMWGa0Wd6nvhaDaS34LiXe/L4yHA8mGivdCIpdu03MPg1g2A4bh3nG83aHz0v6S04mCB0V5YMp6BkKstTlube2C/zOzhPNvaX4NSPxrNwqKOsGpzSs5Q7348mLOy5GxyXuJog7e4WnAUKx4iTsw0nQOGjU8j3TTjyB/kVOPh3ts9Hx6o0RXvDsaIOrQHxJCwFuA9iiOPOBjhxMbSuHysrt1/tg5zDo3Xw7wTHyXWZki9KpoTEBaDafki7639NSAiFgFCBBThW4ehgXJfGZO9kRg/IA9kPzj+XwhGkcAQpHEEKR5DCEVSEo1czwtWMXuoJl3pqa1M4VQP4AbYmTzt0kF/SAAAAAElFTkSuQmCC" InformativeScreenshot="70efaacce0580da817883c2200107891.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='calendar_28495' title='Configuración' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHXSURBVDhPnZK/T8JAFMfrD0AhURPAmGgEJVExISZWRycTWZycmVl1ZuFPYDEmxSombIS2/CiiLhrmOtmCJg4sTCa9k8h83uuvAGXRb/LS3L33/dzd62MIIcx/ZXjHAUv1/pFX1B+8EiKMgMisiMhiFStrTZyEPK/FI3k11i10EoILsCLj3BQ1gXE8FiroyzRvdjl1g9xo8dQIICTjtF3skbAQbf4kz9/68djTT9In6rn9p5eMY+7spsHjAE4V4p8W9C8wrzfehdLnCWtQLdkn54fMIAcQrqIzMHtFNLhSD4VrLUZKH8dGIZi5CWaQA2DK5vXpM5TL1yg1RLoAKX4cGNe2zaH69wX0KCjrqYmApRpWIGFDODVKht8cqGAB6oI1nIO1AwjDL6KJaQEN2Od+CJIG5C3auuvsGWaW9mnG6pP7BlTzkpmco6dke8RvbA6J9oeDvI/2ia2Z+RFAWEZn9gx4JF1ZvafPkjC7LH+nPCJqwT5EoGqeDhoBgOjEpZmyPrCLh2OGTuRyA2esUkMuACgi9+OBCuL8FdylQXz0S6ewGHvEI7MBmgj4i1yA5146xGvbA17bIuNx2060rTJHLoDSy/p5dafFazvKeBTaiaJV5ogQwvwCPmOkyJ7i/uAAAAAASUVORK5CYII=" InformativeScreenshot="b29271de559f5365d1487cd1d230321e.jpg" Selector="&lt;html app='msedge.exe' htmlwindowname='calendar_24489' title='Configuración' /&gt;" Title="Configuración">
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">urlCargaDatos</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,13 +1,9 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Buscar_cliente_y_copiar_nombre_de_cliente" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="maRutCliente" Type="InArgument(x:String)" />
-    <x:Property Name="maUsuarioCliente" Type="InArgument(x:String)" />
-    <x:Property Name="maSistemaCliente" Type="InArgument(x:String)" />
-    <x:Property Name="maClaveCliente" Type="InArgument(x:String)" />
-    <x:Property Name="argument1" Type="InArgument(x:String)" />
+    <x:Property Name="rutCliente" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>624.6666666666666,5296.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>572.6666666666666,3783.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -134,7 +130,7 @@
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Buscar_cliente_y_copiar_nombre_de_cliente_luego_ir_a_carga_datos" sap:VirtualizedContainerService.HintSize="634.6666666666666,5232" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Buscar_cliente_y_copiar_nombre_de_cliente_luego_ir_a_carga_datos" sap:VirtualizedContainerService.HintSize="568,3718.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://reservo.cl/reservointerno/busquedaclientepornombre/" Name="maUrlBusquedaCliente" />
       <Variable x:TypeArguments="x:String" Default="https://reservo.cl/configuracion/EscogerCliente/" Name="maUrlEscogerCliente" />
@@ -145,23 +141,18 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Utilizar Navegador Edge: https://reservo.cl/reservointerno/busquedaclientepornombre/" sap:VirtualizedContainerService.HintSize="572.6666666666666,5121.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="6340c3e7-d7d7-437a-9f9c-aefef884117a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Utilizar Navegador Edge: https://reservo.cl/reservointerno/busquedaclientepornombre/" sap:VirtualizedContainerService.HintSize="506,3608" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="6340c3e7-d7d7-437a-9f9c-aefef884117a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="472,4902" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="472,3388.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="https://reservo.cl/appointment/viewAppt/" Name="maUrlReservo" />
-              <Variable x:TypeArguments="x:String" Default="https://reservo.cl/cargadatos/cargadte/" Name="maUrlCargaDatos" />
               <Variable x:TypeArguments="x:String" Name="maGetUrl" />
               <Variable x:TypeArguments="x:String" Default="https://reservo.cl/permisos/nopermiso/?next=/reservointerno/busquedaclientepornombre/" Name="maUrlPermiso" />
-              <Variable x:TypeArguments="x:String" Name="maUrlAgregarCliente">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">https://reservo.cl/reservointerno/agregarvariosclientes/</Literal>
-                </Variable.Default>
-              </Variable>
+              <Variable x:TypeArguments="x:String" Default="https://reservo.cl/reservointerno/agregarvariosclientes/" Name="maUrlAgregarCliente" />
               <Variable x:TypeArguments="x:String" Name="maSeleccionBotonFinal" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
@@ -218,7 +209,7 @@
               </uix:NTypeInto.Target>
               <uix:NTypeInto.Text>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">maRutCliente</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">rutCliente</CSharpValue>
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
@@ -260,7 +251,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://reservo.cl/reservointerno/agregarvariosclientes/" CvType="InputBox" DesignTimeRectangle="241, 408, 316, 30" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' class='select2-search__field' aaname='' /&gt;" Guid="c3fa1f94-792b-4bea-a6d2-70d6ef785966" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUAAAAAiCAYAAAAu2wBPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPXSURBVHhe7Z3bUhpBFEX7J/1J43MqlWeFPOVGFGMSQaIiiNxvwgwnvRqaDH6A1szsVbVlpJrhbdWh+0y3mzxvbLzc2GCxsaf5xh5nqT1MEmv73I4T+ztK7GaYWHOwtsYgsWvST+xPf+2T2G//GvKkKIryStl5BwfhIpx07V9xFK7CWbgLh+GyzjQNbsNxuG60TA33ua38UuvN0zAoiM9/sOXT8Dfi5nzhz9429ceVXT7yurYLn/PuKuSi6/9XFEV5hey9s3PRNqvgqKudJHEXDsNlOK092ToO1+E83Oey8rvztoziw67cDNnxRT98ap21fXtYhXxpK4qivH2+7pxEcBSuwlm4C4fhsqavDHHb/QsJuv/yS0PZSBl59vnC3n/4aO9OTuz4+FhRFCWXwWG47NQ7DbchQQq9KEEXKz/kV78dbgefVazRaFiv17N+v2+DwUBRFCVXwV04rNlsBqfhNhyXrQQdc368gR0ZUKvVwofH47FNp1ObzWaKoii5DA7DZTgNt+E4FnJxHnOCjslB5vz42YslR6ORLRYLW61WliRJSJqmiqIouUr0Fy6bz+fBbTgO1zEniPscJmSSEDO2Wq0gPz682WwscnR0tLsSQoh8gcsQ4XK5DI7DdbTP4D5H9cdKCZOFk8kkDHyJBCiEyDu4DcfhOlplqAIdDYT0z7BigiGzlV9EAhRC5B3chuNwHc7DfY6GQXpmeJPfyhKgEKKI4DYch+tooMZ9jlKQxkHeXK/Xu6GHSIBCiCKA43DdeXdtv558Bcj8X60jAQohik8UIM678u5zl/4Pj5BIgEKIohMF+N0LkOLP8bycBCiEKAN7AXrnsRDi2EVBAhRClIEoQJxH8RcEyG4KEqAQouhkBYj7JEAhRGmIAsR5EqAQolRIgEKI0hIFePATWIsgQogykBVgWARRG4wQoixEAe7bYNQILYQoC3sBxkZoPQonhCgLUYD7R+G0GYIQoixEAe43Q8huhyUBCiGKTBTgfjus7IaoEqAQoshEAe43RM1uif/8/LwbdogEKIQoAjjuYEv87KFI7XZbO0ILIQoJbsNxB4ciZY/FrFSrEqAQopDgtkqlengs5suD0ev1+m64EEIUB9yG4w4ORu9MU7sbJ3YzTKx+OwwDKtVP1u12w/nAQgiRV3BYp9MJTgsFnncc8rv38sN9rjffXtyN0yBBKkFKRAYzWciKiaIoSh6Dw3DZqXcabkN+FHw4D/e5wWJ7EStBBjAnyMIIq8M8K0yfIM3Stc72sTnypa0oivL2YTer6CUchatwFu7CYbiMOb9s5YfzBovU/gEg17MSGY9WLgAAAABJRU5ErkJggg==" InformativeScreenshot="e50084e68181f04dd58a223e74cc928a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='VariosClientes' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="235, 361, 328, 42" ElementType="Text" FriendlyName="'-- Seleccione Cliente --'" FullSelectorArgument="&lt;webctrl aaname='-- Seleccione Cliente --' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='-- Seleccione Cliente --' tag='SPAN' type='' class='select2-selection__rendered' check:innerText='-- Seleccione Cliente --' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -268,7 +259,7 @@
               </uix:NTypeInto.Target>
               <uix:NTypeInto.Text>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">maNombreCliente</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">maNombreCliente.Trim();</CSharpValue>
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
@@ -276,7 +267,7 @@
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://reservo.cl/reservointerno/agregarvariosclientes/" CvTextArgument="TQV" CvType="Text" DesignTimeRectangle="235, 459, 303, 48" DesignTimeScaleFactor="1.5" ElementType="ListItem" FriendlyName="'TQV'" FullSelectorArgument="&lt;webctrl idx='2' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='LI' class='select2-results__option select2-results__option--highlighted' aaname='' /&gt;" Guid="014bcb48-6674-487f-93e0-2fb7c3dc3afa" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATMAAAA0CAYAAADmKt9SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAOZSURBVHhe7dxdSxRRHMdxX2a33XbXCwiiIKLLHijCCIIKvLCUisLSSnq6yCArMZUerMzMdPNZZ+Z0frMcnR13dt2owf3v98CnZOfs2tWXc87s1JUkievp6XEMBoPRzqNLfxAzBoPR7mM7ZgfObwFA26lUKiliBqCtETMAJhAzACYQMwAmEDMAJhAzACYQMwAmEDMAJhAzACYQMwAmEDMAJhAzACYQMwAmEDMAJhAzACa0HLNzDyK3uqnZexvzy84d749qPuPQlS03+C52CyvORXF1Xpw4t7Tm3IupxB3rq51/8nbkFledS/yce6NxzbV6xr75iX6MfEzqXgdgT8sxOz0QpRFS0IL1LR8a/37Rz9lrXxcSd/TmTpwuPY5dxYdJQwFT7D79TNxsJdkOm97X+7I2WgqTxoe5xB3s3nk979SdKP38Df/vuPqsefgA2NByzOoJqzXRz/XmSPej2K2sV6M39WP3CuxIb+TefEnSyG1Gzt3IBO368zh9bdm//8z94t8x8DZOV3CK6OFrxfMA2FJazLSaUsA0FKyi1ZVe1ypMM7NbVIVJgdLrQ2P1V1x67/S8n+MnKWr15gCwqbSYacunrV+zlZVkz8iyUWq26tIWds3/G7TN1HYzfx2AXaXF7Omk1lQuXTk1OvMKRv3qTWN8ZucQXxFUDBUshSs7X8Lv0A2A/DUAtpUWsxAn/V3vet6g30pqaBWWjV+4U6lwZefrvG3ud/WsTedr2WsA7CstZtO//i5m+a92hBsBCpcCln+dg3+gM+37ldnMYm2cilZgWrHpNzyZYIsJdKLSYhbOs/LbxiIhftkzs0DB0tUQxnDDYC83FwDYVFrMLg/H6Rdq9T2ziw8bn2lpW6ntZdFXLMKNAAVMIQt3OTn4BzpXaTHTaix8z+z99yR9pClc03ZxycdJ3+5X6F5P7/6eWZY+S3P1xED/qzj9mYN/oLOVFjMpegJAYdMzlysb1dWYritO2ScA8vpG4jRmn+eTdJWWvyEAoLOUGjO5MFR9wFyj6NlMDW0hzzb4rHAjII2fx8E/0NlKj5k0+l8z9CjT8Hh126jPu+tXbEU3DMLD5xz8A/gnMfsfTtyK3MRskt79ZPsIoJl9GzMAaAUxA2ACMQNgAjEDYAIxA2ACMQNgAjEDYAIxA2ACMQNgAjEDYAIxA2ACMQNgAjEDYAIxA2ACMQNgAjEDYMKumDEYDEY7DmLGYDBMjGrMKu4P9OQwLChcXLIAAAAASUVORK5CYII=" InformativeScreenshot="7feea90fa113307f657048b8af5578dd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='VariosClientes' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvType="InputBox" DesignTimeRectangle="241, 408, 316, 30" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' class='select2-search__field' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUAAAAAiCAYAAAAu2wBPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPTSURBVHhe7Z1dc9pGGEb1J/0n3VxnOrlOcK+SNjQmTeOPeOxQCAFbYMB8bfdILBH+AclIOmfmsQWzEndnXu2+WmX5chcmi20YzbdhMNuG/nQTbh824SbmarIOF+N1+Px9Hf4Zlel9W4WP3/i/DucxH4arIufD+NkYY35CDt7Zu6jMqnDUp+grnIW7cBguw2n9aek4XIfzcF9Wld9d/kN8n+PJXAzZ8UN/x3QH6/DXf6si7/rGGPPr8+feSQRH4SqchbtwGC67npRu+/pMgtkP+W3Dl/tNuIyD37w9Dy9/fxV+e/EinJ6eGmNMLYPDcNnr6DTchgQp9JIEs1T5Ib/e7X05+E0nXF1dhdFoFMbjcZhMJsYYU6vgLhx2fX1dOA234bhqJZgx58cX2JEB3W63ODnP8zCbzcLj46MxxtQyOAyX4TTchuMu97fDzAlmTA4y58dtL5Z8eHgIi8UirFarsNlsimy3W2OMqVWSv3DZfD4v3IbjcB1zgrgvw4RMEmLGm5ubQn6cvNvtQuLk5GR/JCJSL3AZIlwul4XjcN3FuKwCM6o/VkqYLJxOp8XA5yhAEak7uA3H4TpaZagCs8toQvpnWDHBkNXKL6EARaTu4DYch+twHu7LaBikZ4YvuVdWgCLSRHAbjsN1NFDjvoxSkMZBvlyv1/uhxyhAEWkCOA7XfRiuw7/fYwXI/F93oABFpPkkAeK8T9F92cf4h0dIFKCINJ0kwPdRgBR/Gc/LKUARaQMHAUbnsRCSsYuCAhSRNpAEiPMo/goBspuCAhSRplMVIO5TgCLSGpIAcZ4CFJFWoQBFpLUkAR7dArsIIiJtoCrAYhHENhgRaQtJgIc2GBuhRaQtHASYGqF9FE5E2kIS4OFRODdDEJG2kAR42Ayhuh2WAhSRJpMEeNgOq7ohqgIUkSaTBHjYELW6Jf7T09N+2DEKUESaAI472hK/+lKkfr/vjtAi0khwG447eilS9bWYnbMzBSgijQS3dTpnx6/FfP5i9F6vtx8uItIccBuOO3ox+mC2DXf5Jny534Te7X0xoHP2RxgOh8X7gUVE6goOGwwGhdOKAi86Dvl9jfLDfdloXh7c5dtCglSClIgMZrKQFRNjjKljcBguex2dhtuQHwUfzsN92WRRHqRKkAHMCbIwwuowzwrTJ0izdHdQPjZH3vWNMebXh92skpdwFK7CWbgLh+Ey5vyqlR/Ow31ZvtwVB0mCzAkyOZhEeBFPpmGQCxH6Z7gwu8jQTMgPkfNh/GyMMT8hB+/sXVSmfL6XFhechbtwGC7Dacz5VeWXL3fhfxB0p+UTU1F+AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -327,117 +318,6 @@
                 <uix:TargetAnchorable BrowserURL="https://reservo.cl/configuracion/EscogerCliente/" CvElementArea="511, 402, 134, 55" CvTextArea="529, 418, 97, 19" CvTextArgument="Confirmar" CvType="Button" DesignTimeRectangle="514, 404, 130, 50" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Confirmar'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='btn btn-success' aaname='Confirmar' check:innerText='Confirmar' /&gt;" Guid="f54efe0d-d2b6-4fb5-ab37-477a69dba0de" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAAA2CAYAAAACs+HkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAUxSURBVHhe7Z0xb9tGFID7A4NsAYLEc3bO3rVo55JFkxYjqYFChVEthAF5IQzIDeTAUVowjWkbdO2ylWjXdKSX98g78ig9yrUqE5D4HvABNu94d+L7dHekAfoHkJBgQsSQYEPEkGCDFePdp3fw5pc38PzH5/Ds/TNhA6HcUo4p11wUxDgbnyWVX/38Cl52XsLrvdewtbclbCCUW8ox5ZpyTrk3oyAGVXjx0wu2IWFzoZxT7s3IxKAphezhThQ2H8q9uaxkYpAxNLVwJwmbD+XenDUyMWgzInuK+kK5Jwd0ZGLQTpU7QagP5IAOEUPIEDEEFhFDYBExBBYRQ2ARMQQWEUNgETEEFhFDYBExBJbKxbCOdsG9DiCaqM4oJhGEoz50jiz2nCdlvwW9UQTxVI1l6kP31E9+jK7a/Dk1oEIxLGgHAcSqD5IhGPngI+G9OgYReF+azLlPx9vLMO16EiZj8a8dsEWM6sRo/xmljU8CcI+3Z8otsH1fSRPB4KNZ9rQ4Y+ozhuFnvryuVCPGhz6k30tM+knZcoEzypWSJ+pBg62zelIxqpVxHahEjCzh/3TBYsoz3B4Ekxii2z7smMcPWuDM7EviOx/6nj3TXhsGtCzdD6B9sAPu2Ng74NLlX3agqeuq5WI2/NO8zFxKUoF86A1c8L8lxdgPzX55mUP7lb/DYp9+Kxlj8/c++HfqOEY0dmHnQI0lA2dOj+plC24S3GddNJ5im8tRgRg29P9N2/W/cuUPcOiAr4XQ+5IbJRoGJS+/YFqMIE3CFDe14/n6Sd0hXlDa36iLGkXpfscdYlmpGDHEVJ/aH6God4NEYD3rREmf8UyfMXjX6TIZ31IfeJ4WpzAzGjOmbgPHE2QyYTtePtsuGo+u83+oQIxdGCYXf5npuqEuAJ79l/FtR6yjnhLGvGBKDAq8SO19o/7JAEeAMfWgo44ROqmFsZWKgXHjFsZRKPvmQfcwP968UBtbHKN/amyq97vgJXIE0NNjpNmSDk1w5jHaIJrnSQnAyMmOLRrPKqhADPzGJ60uIYbrphcLk9k1kqxpnKkLNnbUrJGL4Xmz9XUZXnjj+GPFCM4beb2ZsjCwi2UflYy0tJnHcXboJQVGv394EKPoZp8Zuh38nPrYovGsggrE0AlZQozPw2QKNi9IAS1OduF1XyH0f52puxIxsN6JUa9QxiyVTEI1bL8JFjT6NrR+c6B3PgBvHOZLz5wY/HhWQQViNMC9Sdt99B5DJahUDD0bzYlRTH7KisRg5C4te5QYFrTwlj2TwIjoLmmFF4MZzyqoQIwtsAO11j50V7L3Fvq3dFeCm8BP+PvSM8b6idH4qp7jTELwLh3YPbbBPlTPe0qXkjUXI9tY0RT/gSlXWB6us1RN7ymW3mOsnxjp77g3+jL/nMdiZs5F41kF1YiBPPjk0xtCqKbR4Fzv4Je9K1lfMcKL4p8E8s+JsYlibO01oXOtb98w7tXfJuj+W39wjPBqB7bN8x56joHLUy7M+oqRLSUY6fMOBJfVJO6jtMy4u9kgMVK2j3swxMTSrVkWU9xXjAfgzM0kioP0ieJ/fvK5hmKkm0/P+IMiBn55vItdsPf12APouWXnr5bKxRDWAxFDYBExBBYRQ2ARMQQWEUNgETEEFhFDYBExBBYRQ2ARMQQWEUNgYcWQ1znWm9LXOcoLYOtN6Qtg5ZXR9ab0ldEUZIy8ZL5+LHzJPIX8W4r6QLmlHFOuKecL/y2FDppSqDJtRminKmwelFvKsbl8mMGKIVH3APgOM6wqm3g0X5oAAAAASUVORK5CYII=" InformativeScreenshot="2ac77238325bb67bb0b40c5c15af2c1c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='calendar_27436' title='Selección de sucursal' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NGoToUrl DisplayName="Ir a URL" sap:VirtualizedContainerService.HintSize="410,84.66666666666667" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Version="V3">
-              <uix:NGoToUrl.Url>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">maUrlCargaDatos</CSharpValue>
-                </InArgument>
-              </uix:NGoToUrl.Url>
-            </uix:NGoToUrl>
-            <uix:NSelectItem DisplayName="Select Item 'DTEmite'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="DTEmite" ScopeIdentifier="6340c3e7-d7d7-437a-9f9c-aefef884117a" Version="V3">
-              <uix:NSelectItem.Items>
-                <scg:List x:TypeArguments="x:String" Capacity="8">
-                  <x:String>-------</x:String>
-                  <x:String>DTEmite</x:String>
-                  <x:String>BSale</x:String>
-                  <x:String>AppOctava</x:String>
-                  <x:String>OpenFactura</x:String>
-                  <x:String>FACTURA_MX</x:String>
-                  <x:String>Siigo</x:String>
-                  <x:String>Contifico</x:String>
-                </scg:List>
-              </uix:NSelectItem.Items>
-              <uix:NSelectItem.Target>
-                <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" DesignTimeRectangle="818, 581, 330, 45" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'DTEmite'" FullSelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='proveedor' tableRow='18' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='proveedor' type='' tag='SELECT' class='' aaname='' /&gt;" Guid="062df2ad-4bc4-4d8f-bc13-db0ef55607c0" InformativeScreenshot="c8e96fc691f88d9f813ba62c25eca881.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Configuración' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
-              </uix:NSelectItem.Target>
-            </uix:NSelectItem>
-            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="400" DisplayName="Set Text 'INPUT  DTEmite_password'" sap:VirtualizedContainerService.HintSize="410,157.33333333333334" sap2010:WorkflowViewState.IdRef="SetValue_1">
-              <ui:SetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19e0618d-5184-4701-a83e-1a21c5bb716a" InformativeScreenshot="3efcdf16cf0df8823b69041808accac7" Selector="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='DTEmite_password' tableRow='19' tag='INPUT' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:SetValue.Target>
-              <ui:SetValue.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">maClaveCliente</CSharpValue>
-                </InArgument>
-              </ui:SetValue.Text>
-            </ui:SetValue>
-            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  DTEmite_usuario'" sap:VirtualizedContainerService.HintSize="410,157.33333333333334" sap2010:WorkflowViewState.IdRef="SetValue_2">
-              <ui:SetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19e0618d-5184-4701-a83e-1a21c5bb716a" InformativeScreenshot="64a492934abdc188f91a3606989659d6" Selector="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='DTEmite_usuario' tableRow='19' tag='INPUT' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:SetValue.Target>
-              <ui:SetValue.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">maUsuarioCliente</CSharpValue>
-                </InArgument>
-              </ui:SetValue.Text>
-            </ui:SetValue>
-            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  DTEmite_sistema'" sap:VirtualizedContainerService.HintSize="410,157.33333333333334" sap2010:WorkflowViewState.IdRef="SetValue_3">
-              <ui:SetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19e0618d-5184-4701-a83e-1a21c5bb716a" InformativeScreenshot="cd80334f7f8f75fdf90829a267e389b7" Selector="&lt;webctrl parentid='sociedadForms' tag='TABLE' /&gt;&lt;webctrl id='DTEmite_ambiente' tableRow='19' tag='INPUT' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:SetValue.Target>
-              <ui:SetValue.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">maSistemaCliente</CSharpValue>
-                </InArgument>
-              </ui:SetValue.Text>
-            </ui:SetValue>
-            <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="410,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1">
-              <ui:MessageBox.ChosenButton>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">maSeleccionBotonFinal</CSharpReference>
-                </OutArgument>
-              </ui:MessageBox.ChosenButton>
-              <ui:MessageBox.Text>
-                <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">"Haz click en aceptar para guardar o cancelar para terminar el proceso."</CSharpValue>
-                </InArgument>
-              </ui:MessageBox.Text>
-            </ui:MessageBox>
-            <If sap:VirtualizedContainerService.HintSize="410,430.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
-              <If.Condition>
-                <InArgument x:TypeArguments="x:Boolean">
-                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">maSeleccionBotonFinal == "Ok"</CSharpValue>
-                </InArgument>
-              </If.Condition>
-              <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,246.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Guardar'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6340c3e7-d7d7-437a-9f9c-aefef884117a" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://reservo.cl/cargadatos/cargadte/" CvElementArea="304, 913, 70, 29" CvTextArea="311, 920, 54, 13" CvTextArgument="Guardar" CvType="Button" DesignTimeRectangle="305, 914, 67, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Guardar'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='' aaname='Guardar' check:innerText='Guardar' /&gt;" Guid="99462d98-173f-45a3-b789-24ebd5e38a67" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAeCAYAAAB+MQMgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHGSURBVGhD7ZlLjoMwDIa5IFJP00WVa3QFJwH1GF1wgi45gieOY/IgMX1M0WiwpV+ajE2MPzt0kQbUqqZwBFvgPB4PuF6vcD6fDyusHzmwLXDQcbvdYJ7nwwrrRw5sCxwkV3rgaEIObAonk8IRpHAEKRxBCkfQZ3DuHbRNA02sy1CO/ZoGMDavGUu+z/Q2nKlvLYwWunv8/wm6kwV06mCKYr+rvwbHTUwOhoUvG3wOYgIrL8YD5cmzavspijXQuUYE6NQYH38xKzjDJexFMWGa0Wd6nvhaDaS34LiXe/L4yHA8mGivdCIpdu03MPg1g2A4bh3nG83aHz0v6S04mCB0V5YMp6BkKstTlube2C/zOzhPNvaX4NSPxrNwqKOsGpzSs5Q7348mLOy5GxyXuJog7e4WnAUKx4iTsw0nQOGjU8j3TTjyB/kVOPh3ts9Hx6o0RXvDsaIOrQHxJCwFuA9iiOPOBjhxMbSuHysrt1/tg5zDo3Xw7wTHyXWZki9KpoTEBaDafki7639NSAiFgFCBBThW4ehgXJfGZO9kRg/IA9kPzj+XwhGkcAQpHEEKR5DCEVSEo1czwtWMXuoJl3pqa1M4VQP4AbYmTzt0kF/SAAAAAElFTkSuQmCC" InformativeScreenshot="70efaacce0580da817883c2200107891.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='calendar_28495' title='Configuración' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
-              </If.Else>
-            </If>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
